@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imagens{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .imagens img{
+            width: 13.75rem;
+            height: 180px;
+        }
+    </style>
+</head>
+<body>
+    <p>2) Analise os algoritmos abaixo e diga o que será impresso na tela ao serem executados:</p>
+    <div class="imagens"> 
+        <img src="img/a.png">
+        <img src="img/b.png">
+        <img src="img/c.png">
+        <img src="img/d.png">
+        <img src="img/e.png">
+        <img src="img/f.png">
+    </div>
+    <hr>
+    <p id="resultado_a"></p>
+    <p id="resultado_b"></p>
+    <p id="resultado_c"></p>
+    <p id="resultado_d"></p>
+    <p id="resultado_e"></p>
+    <p id="resultado_f"></p>
+</body>
+</html>
+<script>
+    var resultado_a = document.getElementById("resultado_a");
+    var resultado_b = document.getElementById("resultado_b");
+    var resultado_c = document.getElementById("resultado_c");
+    var resultado_d = document.getElementById("resultado_d");
+    var resultado_e = document.getElementById("resultado_e");
+    var resultado_f = document.getElementById("resultado_f");
+
+    var A, B, C, X, Y, Z;
+
+    // Enunciado a)
+     A = 10;
+     B = 20;
+    resultado_a.innerHTML = `Enunciado a)<br>B: ${B}`;
+    B = 5;
+    resultado_a.innerHTML += `<br>A: ${A}, B${B}`;
+
+    //Enunciado b)
+    A = 30;
+    B = 20;
+    C = A + B;
+    resultado_b.innerHTML = `Enunciado b)<br>C: ${C}`;
+    B = 10;
+    resultado_b.innerHTML += `<br>B: ${B}, C: ${C}`;
+    C = A + B;
+    resultado_b.innerHTML += `<br>A: ${A}, B: ${B}, C: ${C}`;
+
+    //Enunciado c)
+    A = 10;
+    B = 20;
+    C = A;
+    B = C;
+    A = B;
+    resultado_c.innerHTML = `Enunciado c)<br>A: ${A}, B: ${B}, C: ${C}`;
+
+    //Enunciado d)
+    A = 10;
+    B = A + 1;
+    A = B - 1;
+    B = A + 1;
+    resultado_d.innerHTML = `Enunciado d)<br>A: ${A}`;
+    A = B + 1;
+    resultado_d.innerHTML += `<br>A: ${A}, B: ${B}`;
+
+    //Enunciado e)
+    
+</script>
