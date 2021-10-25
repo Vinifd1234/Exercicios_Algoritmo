@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>15) Ler um valor e escrever se é positivo ou negativo (considere o valor zero como positivo). </p>
+    <hr>
+    <p>Digite algum valor:</p>
+    <input type="number" id="input_valor">
+    <button onclick="fnVerificar()">Verificar sinal</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnVerificar(){
+        var valor = Number(input_valor.value);
+
+        /*A lógica desse exercício se baseia em verificar se o número é maior ou igual à 0, caso for, é positivo. Caso não for, é negativo*/
+        if(valor >= 0){
+            resultado.innerHTML = "O número é positivo";
+        }else{
+            resultado.innerHTML = "O número é negativo.";
+        }
+    }
+</script>

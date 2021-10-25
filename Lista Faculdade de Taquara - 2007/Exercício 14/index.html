@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>14) Ler um valor e escrever a mensagem É MAIOR QUE 10! se o valor lido for maior que 10, caso
+        contrário escrever NÃO É MAIOR QUE 10!</p>
+        <hr>
+        <p>Digite algum valor</p>
+        <input type="number" id="input_valor">
+        <button onclick="fnVerificar()">Verificar se é maior que 10</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnVerificar(){
+        var valor = Number(input_valor.value);
+
+        /*A lógica desse exercício se baseia em uma estrutura condicional (if), que responde true (verdadeiro) ou false (falso) à determinada condição
+        caso for verdadeiro, o código dentro dessa estrutura é executado, se não (else), o código dentro da estrutura "else" é executado.
+        No caso da verificação abaixo, é validado se o valor digitado pelo usuário é maior que 10, caso essa verificação seja verdadeira é impresso na tela "É maior que 10."
+        Caso não, é impresso "Não é maior que 10." */
+        if(valor > 10){
+            resultado.innerHTML = "É maior que 10."
+        }else{
+            resultado.innerHTML = "Não é maior que 10."
+        }
+    }
+</script>

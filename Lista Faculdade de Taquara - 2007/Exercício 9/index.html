@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>9) Escreva um algoritmo para ler o salário mensal atual de um funcionário e o percentual de reajuste. Calcular e escrever o valor do novo salário. </p>
+    <hr>
+    <p>Digite o salário mensal do funcionário: </p>
+    <input type="number" id="input_salario">
+    <p>Digite o percentual de reajuste (aumento)</p>
+    <input type="number" id="input_reajuste">
+    <button onclick="fnReajuste()">Reajustar salário</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnReajuste(){
+        var salario = Number(input_salario.value);
+        var reajuste = Number(input_reajuste.value);
+
+        /*A lógica desse exercício se baseia em utilizar a fórmula do aumento percentual (valor * (1 + porcentagem à ser aumentada) utilizando
+        os valores oferecidos pelo usuário*/
+        resultado.innerHTML = `Seu salário de R$${salario}, com o reajuste de ${reajuste}% foi para ${salario * (1 + (reajuste / 100))}`;
+    }
+</script>

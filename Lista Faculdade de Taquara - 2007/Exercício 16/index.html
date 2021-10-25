@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>16) As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem
+        compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e
+        escreva o custo total da compra</p>
+        <hr>
+        <p>Digite quantas maçãs foram compradas: </p>
+        <input type="number" id="input_macas">
+        <button onclick="fnCalculaPreco()">Ver preço</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+
+    function fnCalculaPreco(){
+    var qtd_macas = Number(input_macas.value);
+    var preco_maca;
+    /*A lógica desse exercício está em verificar se o usuário comprou 12 ou mais maçãs, caso sim, ajustar o preço para 1 real, caso não, manter o preço em
+    1.30, e então fazer a conta de acordo com o preço estabelecido*/
+    if(qtd_macas >= 12){
+        preco_maca = 1;
+    }else{
+        preco_maca = 1.3;
+    }
+    resultado.innerHTML = `O preço total é de R$${qtd_macas * preco_maca}`;
+}
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>13) Faça um algoritmo que leia três notas de um aluno, calcule e escreva a média final deste aluno.
+        Considerar que a média é ponderada e que o peso das notas é 2, 3 e 5. Fórmula para o cálculo da média
+        final é:</p>
+        <img src="img/formula.png">
+        <hr>
+
+        <p>Digite a primeira nota (de peso 2):</p>
+        <input type="number" id="nota_1">
+        <p>Digite a segunda nota (de peso 3):</p>
+        <input type="number" id="nota_2">
+        <p>Digite a terceira nota (de peso 5):</p>
+        <input type="number" id="nota_3">
+        <button onclick="fnCalcularNota()">Ver média final</button>
+        <p id="resultado"></p>
+
+</body>
+</html>
+<script>
+    function fnCalcularNota(){
+        var nota1 = Number(nota_1.value);
+        var nota2 = Number(nota_2.value);
+        var nota3 = Number(nota_3.value);
+
+        /*A lógica desse exercício é capturar os valores e utilizá-los na fórmula disposta pelo enunciado.*/
+        resultado.innerHTML = `Sua média final é de ${(nota1 * 2 + nota2 * 3 + nota3 * 5) / 10}`;
+    }
+</script>

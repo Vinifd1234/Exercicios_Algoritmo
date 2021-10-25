@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>18) Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem que diga se ela
+        poderá ou não votar este ano (não é necessário considerar o mês em que a pessoa nasceu). </p>
+        <hr>
+        <p>Digite o ano atual:</p>
+        <input type="number" id="input_ano_atual">
+        <p>Digite seu ano de nascimento</p>
+        <input type="number" id="input_ano_nascimento">
+        <button onclick="fnVerificarIdade()">Posso votar?</button>
+        <p id="resultado"></p>
+
+</body>
+</html>
+<script>
+    function fnVerificarIdade(){
+        var ano_atual = Number(input_ano_atual.value);
+        var ano_nascimento = Number(input_ano_nascimento.value);
+
+        /*A lógica desse exercício se baseia em calcular a diferença entre o ano atual e o ano de nascimento, caso essa diferença dê 16 ou maior,
+        significa que a pessoa já pode votar*/
+        var diferenca = ano_atual - ano_nascimento;
+
+        if(diferenca >= 16){
+            resultado.innerHTML = "Pode votar esse ano.";
+        }else{
+            resultado.innerHTML = "Não pode votar esse ano.";
+        }
+    }
+</script>

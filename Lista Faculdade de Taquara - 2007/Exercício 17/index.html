@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ler as notas da 1a. e 2a. avaliações de um aluno. Calcular a média aritmética simples e escrever
+        uma mensagem que diga se o aluno foi ou não aprovado (considerar que nota igual ou maior que 6 o
+        aluno é aprovado). Escrever também a média calculada.</p>
+        <hr>
+
+        <p>Digite a nota da 1° prova:</p>
+        <input type="number" id="input_nota_1">
+        <p>Digite a nota da 2° prova:</p>
+        <input type="number" id="input_nota_2">
+        <button onclick="fnVerificarSituacao()">Ver situação</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnVerificarSituacao(){
+        var nota1 = Number(input_nota_1.value);
+        var nota2 = Number(input_nota_2.value);
+
+        /*A lógica desse exercício se baseia em calcular a média a partir das notas do aluno e, logo após, validar se ela está acima ou é 6. Se for, aprovado
+        Se não, reprovado.*/
+        var media = (nota1 + nota2) / 2;
+        
+        if(media >= 6){
+            resultado.innerHTML = `Com média ${media}, o aluno foi aprovado.`;
+        }else{
+            resultado.innerHTML = `Com média ${media}, o aluno foi reprovado.`;
+        }
+    }
+</script>

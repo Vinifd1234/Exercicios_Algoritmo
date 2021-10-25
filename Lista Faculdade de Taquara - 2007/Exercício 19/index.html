@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>19) Ler dois valores (considere que não serão lidos valores iguais) e escrever o maior deles. </p>
+    <hr>
+    <p>Digite o primeiro valor:</p>
+    <input type="number" id="input_primeiro_valor">
+    <p>Digite o segundo valor:</p>
+    <input type="number" id="input_segundo_valor">
+    <button onclick="fnEscreverMaior()">Ver o maior</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnEscreverMaior(){
+        var primeiro_valor = Number(input_primeiro_valor.value);
+        var segundo_valor = Number(input_segundo_valor.value);
+
+        /* A lógica desse exercício se baseia em comparar se o primeiro valor é maior que o segundo. Caso for, escrever o primeiro.
+        Caso não for, escrever o segundo, tendo em vista que essas são as únicas duas possibilidades já que, explicitado no enunciado, não serão lidos
+        valores iguais*/
+        if(primeiro_valor > segundo_valor){
+            resultado.innerHTML = primeiro_valor;
+        }else{
+            resultado.innerHTML = segundo_valor;
+        }
+    }
+</script>

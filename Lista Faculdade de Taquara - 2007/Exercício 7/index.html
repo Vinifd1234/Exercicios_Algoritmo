@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias</p>
+    <hr>
+    <p>Digite sua idade, separada por ano, meses e dias</p>
+
+    <p>Anos:</p>
+    <input type="number" id="input_anos">
+
+    <p>Meses:</p>
+    <input type="number" id="input_meses" max="12">
+
+    <p>Dias:</p>
+    <input type="number" id="input_dias" max="30">
+    <button onclick="fnCalcular_Idade()">Ver idade em dias</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnCalcular_Idade(){
+        var anos = Number(input_anos.value);
+        var meses = Number(input_meses.value);
+        var dias = Number(input_dias.value);
+
+        /*A lógica desse exercício se baseia em capturar os números digitados pelo usuário e, logo após, converter-los em dia, utilizando 
+        a fórmula: 1 ano = 365 dias e 1 mês = 30 dias, por fim, soma-se tudo à váriavel "dias" e mostra o resultado para o usuário */
+        dias += (anos * 365) + (meses * 30);
+        resultado.innerHTML = "Sua idade em dias é: " + dias;
+
+
+    }
+</script>

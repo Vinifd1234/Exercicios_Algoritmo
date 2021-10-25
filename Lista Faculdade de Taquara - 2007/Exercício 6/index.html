@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Apenas para esse caso, imaginaremos que a base e a altura serão fornecidos em metros-->
+    <p>6) Escreva um algoritmo para ler as dimensões de um retângulo (base e altura), calcular e escrever a área do retângulo.</p>
+    <hr>
+    <p>Digite a base do retângulo: </p>
+    <input type="number" id="input_base" placeholder="em metros (m)">
+    <p>Digite a altura do retângulo</p>
+    <input type="number" id="input_altura" placeholder="em metros (m)">
+    <button onclick="fnCalcular_Area()">Ver área</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnCalcular_Area(){
+        /* A lógica desse exercício se baseia em converter os textos digitado pelo usuário em números e, logo após, exibir o produto
+        desses dois números, seguindo a fórmula de área de retângulo: base * altura*/
+        var base = Number(input_base.value);
+        var altura = Number(input_altura.value);
+
+        resultado.innerHTML = `A área desse retângulo é de: ${base * altura} m²`;
+    }
+</script>

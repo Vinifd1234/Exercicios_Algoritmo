@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>8) Escreva um algoritmo para ler o número total de eleitores de um município, o número de votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa em relação ao total
+        de eleitores.</p>
+    <hr>
+    <p>Digite o número total de eleitores:</p>
+    <input type="number" id="input_total">
+    <p>Digite o total de votos brancos:</p>
+    <input type="number" id="input_brancos">
+    <p>Digite o total de votos nulos:</p>
+    <input type="number" id="input_nulos">
+    <p>Digite o total de votos válidos:</p>
+    <input type="number" id="input_validos">
+
+    <button onclick="fnCalcular_Votos()">Ver percentuais</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnCalcular_Votos(){
+        var total = Number(input_total.value);
+        var brancos = Number(input_brancos.value);
+        var nulos = Number(input_nulos.value);
+        var validos = Number(input_validos.value);
+
+        /*A lógica desse exercício se baseia em coletar a quantidade total de eleitores e, a partir da obtenção dos tipos de votos (nulos, brancos, válidos)
+        calcular a porcentagem em relação ao total (Dividir pela quantidade total e, logo após, multiplicar por 100)*/
+        resultado.innerHTML = `O total de votos é: ${total} (100%).<br>
+        Houveram ${brancos} votos brancos, o que representa ${(brancos/total) * 100}% do total<br>
+        Houveram ${nulos} votos nulos, o que representa ${(nulos/total) * 100}% do total<br>
+        Houveram ${validos} votos válidos, o que representa ${(validos/total) * 100}% do total<br>`;
+    }
+</script>
