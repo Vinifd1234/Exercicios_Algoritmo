@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais
+        de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%.
+        Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva
+        o salário total do funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas
+        (considere que o mês possua 4 semanas exatas).</p>
+        <hr>
+        <p>Informe o número de horas trabalhadas no mês:</p>
+        <input type="number" id="input_horasMes">
+        <p>Informe o salário por hora:</p>
+        <input type="number" id="input_salarioHora">
+        <button onclick="fnCalcularSalario()">Calcular salário total</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+    /*A lógica desse exercício se baseia em, primeiramente, calcular o salário total do funcionário, fazendo o produto entre as horas que horam trabalhadas no mês e o salário por hora.
+    Logo após, é feita a verificação se o funcionário trabalhou mais do que 40 horas por semana (40 horas por semana = 160 horas mensais, vide enunciado), caso sim,
+    pegamos o valor da hora regular, acresentamos 50% nele e depois multiplicamos ele pelas horas extras que o funcionário trabalhou
+    (que é a diferença entre a quantidade de horas e 160), logo após calculamos o acrésimo e somamos ao salário já calculado anteriormente*/
+    function fnCalcularSalario(){
+        var horasMes = Number(input_horasMes.value);
+        var salarioHora = Number(input_salarioHora.value);
+        
+        
+        var salarioTotal = horasMes * salarioHora; 
+
+        if(horasMes > 160){
+            var horasExtras = horasMes - 160;
+            var acresimo = (salarioHora * 1.5) * horasExtras;
+            salarioTotal += acresimo;
+        }
+
+        resultado.innerHTML = `O salário será de R$${salarioTotal.toFixed(2)}`;
+
+    }
+</script>

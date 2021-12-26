@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que
+        ele recebe uma comissão de 3% sobre o total das vendas até R$ 1.500,00 mais 5% sobre o que
+        ultrapassar este valor, calcular e escrever o seu salário total.</p>
+        <hr>
+        <p>Informe o salário fixo do vendedor:</p>
+        <input type="number" id="input_salarioFixo">
+        <p>Informe o valor das vendas efetuadas pelo vendedor:</p>
+        <input type="number" id="input_valorVendas">
+        <button onclick="fnCalcularSalario()">Calcular salário final</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+    function fnCalcularSalario(){
+        /*A lógica desse exercício se baseia em verificar se o vendedor rendeu, em vendas, mais de 1500 reais, caso sim, sua comissão será de 5% em cima daquilo que ele vendeu, vide enunciado.
+        Se não, será de 3%, logo após essa verificação é atribuído a comissão do vendedor junto ao seu salário fixo.*/
+        var salarioFixo = Number(input_salarioFixo.value);
+        var valorVendas = Number(input_valorVendas.value);
+        var comissao;
+        var salarioFinal;
+
+        if(valorVendas > 1500){
+            comissao = valorVendas * 0.05;
+        }else{
+            comissao = valorVendas * 0.03; 
+        }
+
+        salarioFinal = salarioFixo + comissao;
+        resultado.innerHTML = `O salário final do vendedor será de R$${salarioFinal.toFixed(2)}`;
+    }
+</script>

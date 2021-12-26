@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ler a hora de início e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem os
+        minutos) e calcule a duração do jogo em horas, sabendo-se que o tempo máximo de duração do jogo é
+        de 24 horas e que o jogo pode iniciar em um dia e terminar no dia seguinte.</p>
+        <hr>
+        <p>Informe a hora de ínicio do jogo:</p>
+        <input type="number" id="input_horaInicio">
+        <p>Informe a hora de término do jogo:</p>
+        <input type="number" id="input_horaTermino">
+        <button onclick="fnCalcularDuracao()">Calcular duração</button>
+        <p id="resultado"></p>
+</body>
+</html>
+<script>
+    /*A lógica desse exercício se baseia em capturar ambos os valores oferecidos pelo usuário (de ínicio e término da partida), logo após
+    é feito um cálculo com esse valor, o resultado é armazenado numa váriavel chamada 'duracao', isso significa que por exemplo, se a partida começou 1 hora e terminou as 5, logo teve 4 horas de duração,
+    porém, existem casos em que a partida começa em um dia e termina em outro. Por exemplo, a partida começa as 23 horas de um dia e termina as 5 do outro.
+    
+    Utilizando apenas o cálculo horaTermino - horaInicio, teriamos um resultado negativo, o que é incompreensível pelo usuário.
+    Sendo assim, pegamos esse resultado negativo (na única condição que temos no código), e fazemos a diferença dele para 24 horas (por mais que o cálculo esteja sendo de soma, por 'duracao' ser um número negativo,
+    em tese, teremos uma subtração), logo após é exibido o resultado para o usuário */
+    function fnCalcularDuracao(){
+        var horaInicio = Number(input_horaInicio.value);
+        var horaTermino = Number(input_horaTermino.value);
+
+        var duracao = horaTermino - horaInicio;
+
+        if(duracao < 0){
+            duracao = 24 + duracao;
+        }
+
+        resultado.innerHTML = `O jogo durou ${duracao} horas`;
+        
+    }
+</script>
